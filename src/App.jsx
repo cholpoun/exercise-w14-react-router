@@ -1,24 +1,16 @@
-import { BrowserRouter, Link, Routes } from "react-router-dom";
-import routes from "./routes/routes";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Link } from 'react-router-dom';
+import routes from './routes/routes';
 
-const App = () => {
+function App() {
   return (
-    <>
-      <BrowserRouter>
-        <nav>
-          <ul className="app-ul">
-            <li className="app-li">
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <main>
-          <Routes>{routes}</Routes>
-        </main>
-      </BrowserRouter>
-    </>
+    <Router>
+      <nav>
+        <Link to="/">Home</Link>
+      </nav>
+      <Routes>
+        {routes}
+      </Routes>
+    </Router>
   );
 }
 
